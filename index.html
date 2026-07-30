@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EHS 365 : Project Compass</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <p class="header__label">EHS 365</p>
+      <h1 class="header__title">Project Compass</h1>
+      <p class="header__date" id="today-date"></p>
+    </header>
+
+    <nav class="nav">
+      <button class="nav-tab nav-tab--active" data-panel="panel-attendance" type="button">출퇴근</button>
+      <button class="nav-tab" data-panel="panel-idcard" type="button">사원증</button>
+      <button class="nav-tab" data-panel="panel-org" type="button">조직도</button>
+    </nav>
+
+    <!-- 출퇴근 -->
+    <section class="panel panel--active" id="panel-attendance">
+      <div class="status-card">
+        <span class="status-card__badge" id="status-badge">출근 전</span>
+        <p class="status-card__time" id="status-time">—</p>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn--primary" id="btn-clock-in" type="button">
+          <span class="btn__icon">🟢</span>
+          <span class="btn__label">출근</span>
+        </button>
+        <button class="btn btn--secondary" id="btn-go-out" type="button" disabled>
+          <span class="btn__icon">🚶</span>
+          <span class="btn__label">외출</span>
+        </button>
+        <button class="btn btn--secondary" id="btn-return" type="button" disabled>
+          <span class="btn__icon">↩️</span>
+          <span class="btn__label">복귀</span>
+        </button>
+        <button class="btn btn--danger" id="btn-clock-out" type="button" disabled>
+          <span class="btn__icon">🔴</span>
+          <span class="btn__label">퇴근</span>
+        </button>
+      </div>
+
+      <div class="log">
+        <h2 class="log__title">오늘 기록</h2>
+        <ul class="log__list" id="log-list">
+          <li class="log__empty">아직 기록이 없습니다.</li>
+        </ul>
+      </div>
+
+      <div class="log log--history">
+        <h2 class="log__title">이전 기록</h2>
+        <div id="history-list">
+          <p class="log__empty">이전 기록이 없습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 사원증 -->
+    <section class="panel" id="panel-idcard">
+      <div class="id-card" id="id-card"></div>
+    </section>
+
+    <!-- 조직도 -->
+    <section class="panel" id="panel-org">
+      <div class="org-chart" id="org-chart"></div>
+    </section>
+  </div>
+
+  <script src="scripts/organization.js"></script>
+  <script src="scripts/attendance.js"></script>
+</body>
+</html>
