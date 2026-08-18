@@ -291,11 +291,11 @@ body {
 
 .nav-tab {
   flex: 1;
-  padding: 0.625rem 0.5rem;
+  padding: 0.625rem 0.375rem;
   border: none;
   border-radius: 8px;
   background: transparent;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--charcoal-400);
   cursor: pointer;
@@ -310,6 +310,110 @@ body {
 
 .nav-tab:not(.nav-tab--active):hover {
   color: var(--charcoal-600);
+}
+
+/* Department Menu */
+.dept-menu__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--charcoal-400);
+  margin-bottom: 0.375rem;
+}
+
+.dept-menu__desc {
+  font-size: 0.875rem;
+  color: var(--charcoal-400);
+  margin-bottom: 1.25rem;
+}
+
+.dept-menu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.dept-menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.25rem 0.75rem;
+  border: 1px solid #f3f4f6;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dept-menu__item:hover {
+  border-color: var(--emerald-200);
+  background: var(--emerald-50);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dept-menu__item:active {
+  transform: translateY(0);
+}
+
+.dept-menu__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.dept-menu__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--charcoal-800);
+}
+
+.dept-page__back {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding: 0.375rem 0;
+  border: none;
+  background: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--emerald-600);
+  cursor: pointer;
+}
+
+.dept-page__back:hover {
+  color: var(--emerald-700);
+}
+
+.dept-page {
+  background: var(--emerald-50);
+  border: 1px solid var(--emerald-100);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.dept-page__icon {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.dept-page__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--charcoal-900);
+  margin-bottom: 0.75rem;
+}
+
+.dept-page__role {
+  font-size: 0.9375rem;
+  color: var(--charcoal-600);
+  line-height: 1.6;
 }
 
 /* Panels */
@@ -565,6 +669,10 @@ body {
 
 @media (max-width: 360px) {
   .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-menu__grid {
     grid-template-columns: 1fr;
   }
 
